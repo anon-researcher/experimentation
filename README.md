@@ -74,12 +74,12 @@ To replicate the evaluation on _deep_ difference graphs:
 
 #### Data Analysis
 
-To combine results on both structures of difference graphs (i.e., broad and deep) use the script `prepare.py` which creates a single resulting `overall_results.csv` file for data analysis. It will also combine the single result entries with details of the underlying graph (e.g., nodes, edges, average endpoint calls).
+We added the results of our evaluation runs in the file `overall_results.csv`. You can explore the results using our _R_ script `performance.R` and create plots on demand.
+
+To combine results on your own execution on both structures of difference graphs (i.e., broad and deep) use the script `prepare.py` which creates this single resulting `overall_results.csv` file for data analysis. It will also combine the single result entries with details of the underlying graph (e.g., nodes, edges, average endpoint calls).
 
 1. Adjust paths in `prepare.py` as required
 2. Run `python prepare.py`
-
-Explore the results using our _R_ script `performance.R` and create plots on demand.
 
 #### Generating Difference Graphs
 
