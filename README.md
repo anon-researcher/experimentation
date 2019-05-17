@@ -12,6 +12,7 @@ This is the online appendix for our submission at Middleware'19. It provides the
 The source code of the implemented heuristics can be found as part of the _performance evaluation_ replication package in the folder `performance_evaluation/src`. Detailled instructions to build and execute the heuristics are covered in the [Performance Evaluation Replication Package](#performance-evaluation).
 
 ### Screenshots UI
+Screenshots are presented [here](screenshots.md).
 
 ### Ranking Quality
 
