@@ -32,3 +32,49 @@ Use our _R_ script `script.R` to explore the results and replicate our plots on 
 
 
 ### Performance Evaluation
+
+#### Installation Instructions
+Replicating our performance evaluation requires:
+1. Node.js (>= version 10.15)
+2. NPM (>= version 6.9)
+3. Python 3 
+4. R (>= version 3.5) for data analysis only
+
+#### Build Instructions
+1. Switch directory `cd performance_evaluation`
+2. `npm install`
+3. `npm run build`
+
+#### Difference Graphs
+Due to their size the used difference graphs (broad and deep variants) are not included in the reposity and need to be downloaded separately.
+
+1. create folder `mkdir evaluation_data`
+2. `cd evaluation_data`
+3. Download _broad_ difference graphs from [here](https://drive.google.com/open?id=1vPob3T-buWh9hsVpdC1aIpKKGdld_edW)
+4. Download _deep_ difference graphs from [here](https://drive.google.com/open?id=1IBdMiRHuP-rfJZMWht80Zh9RLz9h8APL)
+5. go back `cd ..`
+
+#### Execution
+The script `runner.py` is the main script for executing the performance evaluation. It will take care to feed the respective heuristic with difference graphs as input and monitors CPU and memory utilization. Check out `runner.py` for the various settings (e.g., how many repetitions) and adjust paths as required (e.g., output files for results). 
+
+By default the results of heuristcs will be logged in a folder `logs`, make sure to create it before executing (i.e., `mkdir logs`).
+Captured data on heuristic execution (e.g., execution time) will be stored in `results.txt` and utilization data in `utilization.txt`.
+
+To replicate the evaluation on _broad_ difference graphs:
+1. Uncompress `tar -xzf evaluation_data/broad.tar.gz --directory evaluation_data/`
+2. Adjust parameters in `runner.py` (e.g., output file, default `results.txt`)
+3. Run: `python runner.py`
+
+To replicate the evaluation on _deep_ difference graphs:
+1. Uncompress `tar -xzf evaluation_data/deep.tar.gz --directory evaluation_data/`
+2. Adjust parameters in `runner.py` (e.g., output file, default `results.txt`)
+2. Run: `python runner.py`
+
+#### Data Analysis
+
+To combine results on both structures of difference graphs (i.e., broad and deep) use the script `prepare.py` which creates a single resulting `overall_results.csv` file for data analysis. It will also combine the single result entries with details of the underlying graph (e.g., nodes, edges, average endpoint calls).
+
+1. Adjust paths in `prepare.py` as required
+2. Run `python prepare.py`
+
+Explore the results using our _R_ script `performance.R` and create plots on demand.
