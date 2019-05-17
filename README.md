@@ -9,7 +9,9 @@ This is the online appendix for our submission at Middleware'19. It provides the
 4. **[Performance Evaluation](#performance-evaluation)**<br>
 
 ### Source Code
-The source code of the implemented heuristics can be found as part of the _performance evaluation_ replication package in the folder `performance_evaluation/src`. Detailled instructions to build and execute the heuristics are covered in the [Performance Evaluation Replication Package](#performance-evaluation).
+The source code of the implemented heuristics can be found as part of the _performance evaluation_ replication package in the folder `performance_evaluation/src`. The overall algorithm is implemented in `rankingAlgorithm.ts`, the heuristics' implementations of _annotate_ and _extract_ phases are contained in `strategies.ts`. Note that `strategies.ts` contains more heuristics than presented in the paper and the naming of the heuristics is slightly different. Consult the documentation provided in `strategies.ts` for details.
+
+Detailled instructions to build and execute the heuristics are covered in the [Performance Evaluation Replication Package](#performance-evaluation).
 
 ### Screenshots UI
 Screenshots are presented [here](screenshots.md).
@@ -46,7 +48,7 @@ Replicating our performance evaluation requires:
 3. `npm run build`
 
 #### Difference Graphs
-Due to their size the used difference graphs (broad and deep variants) are not included in the reposity and need to be downloaded separately.
+Due to their size the used difference graphs (broad and deep variants) are not included in the repository and need to be downloaded separately.
 
 1. create folder `mkdir evaluation_data`
 2. `cd evaluation_data`
@@ -78,3 +80,8 @@ To combine results on both structures of difference graphs (i.e., broad and deep
 2. Run `python prepare.py`
 
 Explore the results using our _R_ script `performance.R` and create plots on demand.
+
+#### Generating Difference Graphs
+
+We also provide the script we used to generate difference graphs of multiple sizes and with various characteristics. The script is located in `evaluation_data/topology.py`.
+Adjust parameters (e.g., maximum path lenghts, mean and SD values used to create nodes and calls, and change frequencies, probabilities that performance deviations are included and of which extent). Run the script using `python topology.py`. This will create output that can be fed to heuristics.
