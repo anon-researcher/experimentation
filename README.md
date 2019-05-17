@@ -52,8 +52,8 @@ Due to their size the used difference graphs (broad and deep variants) are not i
 
 1. create folder `mkdir evaluation_data`
 2. `cd evaluation_data`
-3. Download _broad_ difference graphs from [here](https://drive.google.com/open?id=1vPob3T-buWh9hsVpdC1aIpKKGdld_edW)
-4. Download _deep_ difference graphs from [here](https://drive.google.com/open?id=1IBdMiRHuP-rfJZMWht80Zh9RLz9h8APL)
+3. Download _broad_ difference graphs from [here](https://figshare.com/s/0b92e30e27a420d8db6b)
+4. Download _deep_ difference graphs from [here](https://figshare.com/s/8b8e17b2fb01f13ab705)
 5. go back `cd ..`
 
 #### Execution
